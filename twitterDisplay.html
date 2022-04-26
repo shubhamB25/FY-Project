@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+      
+    <title>CPA Location Search</title>
+  </head>
+    
+  <body class="container">
+      
+      
+      <div class="py-5"></div>
+      
+      <div class="col-sm" style="font-family:; font-size: 40px;">
+            <center><b>TWEETS EXTRACTED FROM THE FOLLOWING TWITTER HANDLES</b></center>
+      </div>
+      
+      
+
+      
+      
+      <div class="py-3"></div>
+      
+      <!--      STATISTICS-->
+      <div class="container">
+      <div class="card-deck ">
+
+          <div class="px-5"></div>
+          <div class="card" >
+              <div class="py-2"></div>
+            <center><img class="card-img-top" src="twitterPageImages/nynews_logo_new.png" alt="Card image cap" style="width: 200px; height:200px; "></center>
+              <hr>
+            <div class="card-body">
+              <h5 class="card-title">NYPD News  <img class="card-img-top" src="twitterPageImages/twitter_tick.png" alt="Card image cap" style="width: 23px; height:23px; "></h5>
+              <p class="card-text">@NYPDnews</p>
+              <p class="card-text">This is the official Twitter account of the New York City Police Dept.  Latest updates of crimes and wanted criminals are posted on this account. 200 latest tweets have been extracted from the feed of the account. Access the dataset <a class="" href="#">here</a></p>
+              <center><a href="https://twitter.com/NYPDnews" class="btn btn-danger">Visit Handle</a></center>
+            </div>
+          </div>
+          <div class="card">
+              <div class="py-2"></div>
+            <center><img class="card-img-top" src="twitterPageImages/nytips_logo_new.png" alt="Card image cap" style="width: 200px; height:200px; "></center>
+              <hr>
+            <div class="card-body">
+              <h5 class="card-title">NYPD Crime Stoppers  <img class="card-img-top" src="twitterPageImages/twitter_tick.png" alt="Card image cap" style="width: 23px; height:23px; "></h5>
+              <p class="card-text">@NYPDTips</p>
+              <p class="card-text">This is an account handled by the NYPD. The public can send anonymous tips to this handle and in return receive upto $3500 reward for a tip that leads to arrest. 200 latest tweets have been extracted from the feed of the account. Access the dataset <a class="" href="#">here</a></p>
+              <center><a href="https://twitter.com/NYPDTips" class="btn btn-danger">Visit Handle</a></center>
+            </div>
+          </div>
+          <div class="px-5"></div>
+
+          
+          
+        </div>
+          
+
+          
+      
+        <div class="py-3"></div>
+        <hr>
+          
+<!--          DO NOT SHOW THIS CARD DECK IN 15MIN VERSION-->
+       <div class="card-deck ">
+        <div class="card" style="background-color: cyan; border-style: solid; border-width: thick">
+            <div class="card-body">
+              <h4 class="card-title">Total tweets</h4>
+                <div class="py-1"></div>
+              <center><h1 class="card-text">400</h1></center>
+                
+              
+            </div>
+          </div>  
+        <div class="card" style="background-color:  cyan; border-style: solid; border-width: thick">
+            <div class="card-body">
+              <h4 class="card-title">Tweets related to crime</h4>
+                <div class="py-1"></div>
+              <center><h1 class="card-text">278</h1></center>
+                
+              
+            </div>
+          </div>
+          <div class="card" style="background-color: cyan; border-style: solid; border-width: thick">
+            <div class="card-body">
+              <h4 class="card-title">Tweets not related to crime</h4>
+                <div class="py-1"></div>
+              <center><h1 class="card-text">122</h1></center>
+                
+              
+            </div>
+          </div>
+          
+          
+        </div>
+          
+          <hr>
+          
+          <div class="col-sm" style="font-family:; font-size: 30px;">
+            <center><b>New York City map depicting the crime prone areas. </b></center>
+          </div>
+          <div class="col-sm" style="font-family:; font-size: 15px;">
+            <center><b>Zoom in/out to see specific location. (Blue markers indicate the crime location while the circles with numbers in them indicate a group of crimes reported</b></center>
+          </div>
+          <div class="py-3"></div>
+          
+          
+          
+    
+          <!--          ADD THE FOLIUM MAP HERE-->
+          
+          
+          
+          
+          
+          <div class="col-sm" style="font-family:; font-size: 30px;">
+            <center><b>Borough-wise distribution of cases</b></center>
+          </div>
+          <div class="col-sm" style="font-family:; font-size: 15px;">
+            <center><b>New York City is divided into 5 boroughs as mentioned below. Borough is a term used for a town or district which is an administrative unit.</b></center>
+          </div>
+          <div class="py-3"></div>
+          
+          
+          
+          
+          <center><p>
+          
+          <a class="btn btn-danger" data-toggle="collapse" href="#multiCollapseExample1" role="button" aria-expanded="false" aria-controls="multiCollapseExample1">Brooklyn</a>
+          <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#multiCollapseExample2" aria-expanded="false" aria-controls="multiCollapseExample2">Bronx</button>
+          <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#multiCollapseExample3" aria-expanded="false" aria-controls="multiCollapseExample3">Manhattan</button>
+          <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#multiCollapseExample4" aria-expanded="false" aria-controls="multiCollapseExample4">Queens</button>
+          <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#multiCollapseExample5" aria-expanded="false" aria-controls="multiCollapseExample5">Staten Island</button>
+          <button class="btn btn-danger" type="button" data-toggle="collapse" data-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapseExample1 multiCollapseExample2">ALL</button>
+        
+          
+              
+        </p></center>
+          
+         <div class="py-3"></div>  
+        <div class="row">
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample1">
+              <div class="card card-body">
+                25
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample2">
+              <div class="card card-body">
+                24
+              </div>
+            </div>
+          </div>
+            <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample3">
+              <div class="card card-body">
+                23
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample4">
+              <div class="card card-body">
+                22
+              </div>
+            </div>
+          </div>
+          <div class="col">
+            <div class="collapse multi-collapse" id="multiCollapseExample5">
+              <div class="card card-body">
+                21
+              </div>
+            </div>
+          </div>
+        </div>
+          
+          <div class="py-3"></div> 
+
+          
+          <h1>OR USE THIS</h1>
+          
+          <div class="accordion w-50" id="accordionExample">
+              
+              <div class="card bg-dark">
+                <div class="card-header" id="headingOne">
+                  <h2 class="mb-0">
+                    <button class="btn btn-danger " type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                      BROOKLYN
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseOne" class="collapse " aria-labelledby="headingOne" data-parent="#accordionExample">
+                  <div class="card-body bg-light">
+                    *25* cases reported in Brooklyn.
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-dark">
+                <div class="card-header" id="headingTwo">
+                  <h2 class="mb-0">
+                    <button class="btn btn-danger collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      BRONX
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordionExample">
+                  <div class="card-body bg-light">
+                    *25* cases reported in Bronx.
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-dark">
+                <div class="card-header" id="headingThree">
+                  <h2 class="mb-0">
+                    <button class="btn btn-danger collapsed" type="button" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      MANHATTAN
+                    </button>
+                  </h2>
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordionExample">
+                  <div class="card-body bg-light">
+                    *25* cases reported in Manhattan.
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-dark">
+                <div class="card-header" id="headingFour">
+                  <h2 class="mb-0">
+                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseOne">
+                      QUEENS
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordionExample">
+                  <div class="card-body bg-light">
+                    *25* cases reported in Queens.
+                  </div>
+                </div>
+              </div>
+              <div class="card bg-dark">
+                <div class="card-header" id="headingFive">
+                  <h2 class="mb-0">
+                    <button class="btn btn-danger" type="button" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseOne">
+                      STATEN ISLAND
+                    </button>
+                  </h2>
+                </div>
+
+                <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordionExample">
+                  <div class="card-body bg-light">
+                    *25* cases reported in Staten Island. 
+                  </div>
+                </div>
+              </div>
+            </div>
+          
+          <div class="py-3"></div><hr>
+          
+
+          
+          
+          
+          
+          
+          
+<!--          PUT BAR CHART HERE-->
+          
+          
+          </div>
+      
+      
+      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>

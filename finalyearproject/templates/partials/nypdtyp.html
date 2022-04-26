@@ -1,0 +1,589 @@
+
+ <!DOCTYPE html>
+ <html lang="en" dir="ltr">
+ 
+ <head>
+   <meta charset="utf-8">
+   
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+   <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  
+ 
+   <!-- Favicons -->
+   <link href="/media/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+ 
+   <!-- Google Fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+ 
+   <!-- Vendor CSS Files -->
+   <link href="/media/assets/vendor/aos/aos.css" rel="stylesheet">
+   <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+   <link href="/media/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+   <link href="/media/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+   <link href="/media/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+   <link href="/media/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+ 
+   <!-- Template Main CSS File -->
+   <link href="/media/assets/css/style.css" rel="stylesheet">
+
+   
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+   <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+  <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  -->
+   <!-- =======================================================
+   * Template Name: Day - v4.7.0
+   * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+   * Author: BootstrapMade.com
+   * License: https://bootstrapmade.com/license/
+   ======================================================== -->
+ </head>
+ 
+ <body>
+ 
+  <div class="py-5"></div>
+
+
+ <!-- ======= Source of Data Section ======= -->
+<section id="crimetype" class="crimetype">
+  <div class="container">
+    <div class="section-title" data-aos="fade-up">
+      <span>SELECT A TYPE OF CRIME</span>
+      <h2>SELECT A TYPE OF CRIME</h2>
+      <hr style="background-color: red; width:550px"></hr>
+      <p style="font-size: 17px;">We have classified the data into 10 unique crime types. You can see statistics for each crime type through below tabs.</p>
+    </div>
+
+    <ul class="nav nav-tabs" data-aos="fade-up">
+      <li class="nav-item"><a class="nav-link active" data-toggle="tab" href="#Larceny">Larceny</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Harassment">Harassment</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Trespassing">Trespassing</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Roberry">Roberry</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Dispute">Dispute</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Assault">Assault</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#DisorderlyConduct">Disorderly Conduct</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Shooting">Shooting</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Explosion">Explosion</a></li>
+      <li class="nav-item"><a class="nav-link" data-toggle="tab" href="#Other">Other</a></li>
+    </ul>
+    <div class="tab-content">
+      <div id="Larceny" class="tab-pane active" data-aos="fade-up">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Larceny</h3>
+            <em style="color:grey">noun</em>
+            <p>stealing, especially (in the US) the crime of taking something that does not belong to you, without illegally entering a building to do so
+            </p>
+            <p>Larceny Includes: <span class="badge badge-danger"> from a person</span>  <span class="badge badge-danger">from a vehical</span>  <span class="badge badge-danger">from a limited access highway</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Larceny</h3>
+            <img src="data:image/png;base64, {{ plot1|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Larceny is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max1|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Larceny cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent1|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Larceny Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count1|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Larceny is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min1|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Larceny cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent1|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Larceny -->
+      </div>
+      <div id="Harassment" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Harassment</h3>
+            <em style="color:grey">noun</em>
+            <p>behaviour that annoys or upsets someone
+            </p>
+            <p>Harassment Includes: <span class="badge badge-danger">verbal harassment</span>  <span class="badge badge-danger">physical harassment</span>  <span class="badge badge-danger">sexual harassment</span> <span class="badge badge-danger">indoor</span> <span class="badge badge-danger">outdoor</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Harassment</h3>
+            <img src="data:image/png;base64, {{ plot2|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Harassment is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max2|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Harassment cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent2|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Harassment Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count2|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Harassment is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min2|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Harassment cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent2|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Harassment -->
+      </div>
+      <div id="Trespassing" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Trespassing</h3>
+            <em style="color:grey">noun</em>
+            <p>to go onto someone's land or enter their building without permission.
+            </p>
+            <p>Trespassing Includes: <span class="badge badge-danger">farebeat</span>  <span class="badge badge-danger">indoor</span> <span class="badge badge-danger">outdoor</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Trespassing</h3>
+            <img src="data:image/png;base64, {{ plot3|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Trespassing is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max3|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Trespassing cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent3|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Trespassing Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count3|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Trespassing is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min3|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Trespassing cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent3|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Trespassing -->
+      </div>
+      <div id="Roberry" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Roberry</h3>
+            <em style="color:grey">noun</em>
+            <p>the crime of stealing from somewhere or someone.
+            </p>
+            <p>Roberry Includes: <span class="badge badge-danger">burglary</span>  <span class="badge badge-danger">in residence</span> <span class="badge badge-danger">in banks</span> <span class="badge badge-danger">alarms</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Roberry</h3>
+            <img src="data:image/png;base64, {{ plot4|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Roberry is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max4|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Roberry cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent4|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Roberry Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count4|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Roberry is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min4|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Roberry cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent4|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Roberry -->
+      </div>
+      <div id="Dispute" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Dispute</h3>
+            <em style="color:grey">noun</em>
+            <p>an argument or disagreement, especially an official one between, for example, workers and employers or two countries with a common border
+            </p>
+            <p>Dispute Includes: <span class="badge badge-danger">vehicle accident</span>  <span class="badge badge-danger">in family</span> <span class="badge badge-danger">knife</span> <span class="badge badge-danger">firearm</span> <span class="badge badge-danger">violation of protective order</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Dispute</h3>
+            <img src="data:image/png;base64, {{ plot5|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Dispute is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max5|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Dispute cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent5|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Dispute Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count5|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Dispute is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min5|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Dispute cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent5|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Dispute -->
+      </div>
+      <div id="Assault" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Assault</h3>
+            <em style="color:grey">noun</em>
+            <p>act of inflicting physical harm or unwanted physical contact upon a person.
+            </p>
+            <p>Assault Includes: <span class="badge badge-danger">knife</span>  <span class="badge badge-danger">weapons</span> <span class="badge badge-danger">shots</span> <span class="badge badge-danger">child abuse</span> </p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Assault</h3>
+            <img src="data:image/png;base64, {{ plot6|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Assault is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max6|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Assault cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent6|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Assault Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count6|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Assault is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min6|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Assault cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent6|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Assault -->
+      </div>
+      <div id="DisorderlyConduct" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Disorderly Conduct</h3>
+            <em style="color:grey">noun</em>
+            <p>unruly behaviour constituting a minor offence.
+            </p>
+            <p>Disorderly Conduct Includes: <span class="badge badge-danger">by a group</span>  <span class="badge badge-danger">by a person</span> <span class="badge badge-danger">by noise</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Disorderly Conduct</h3>
+            <img src="data:image/png;base64, {{ plot7|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Disorderly Conduct is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max7|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Disorderly Conduct cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent7|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Disorderly Conduct Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count7|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Disorderly Conduct is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min7|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Disorderly Conduct cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent7|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Disorderly Conduct -->
+      </div>
+      <div id="Shooting" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Shooting</h3>
+            <em style="color:grey">noun</em>
+            <p>indicates that a firearm has been discharged in the vicinity of the speaker.
+            </p>
+            <p>Shooting Conduct Includes: <span class="badge badge-danger">transit</span>  <span class="badge badge-danger">indoor</span> <span class="badge badge-danger">outdoor</span></p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Shooting</h3>
+            <img src="data:image/png;base64, {{ plot8|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Shooting is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max8|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Shooting cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent8|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Shooting Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count8|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Shooting is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min8|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Shooting cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent8|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Shooting  -->
+      </div>
+      <div id="Explosion" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Explosion</h3>
+            <em style="color:grey">noun</em>
+            <p>a violent shattering or blowing apart of something, as is caused by a bomb.
+            </p>
+            <p>Explosive Device Includes: <span class="badge badge-danger">bomb</span> </p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Explosion</h3>
+            <img src="data:image/png;base64, {{ plot9|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Explosion is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max9|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Explosion cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent9|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Explosion Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count9|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Explosion is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min9|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Explosion cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent9|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Data Explosion  -->
+      </div>
+      <div id="Other" class="tab-pane fade">
+        <div class="py-2"></div>
+        <div class="card meaning border-left border-danger" style="background-color:#F8F8F8;">
+            <h3>Other</h3>
+            <em style="color:grey">noun</em>
+            <p>indicates crimes that do not lie in any specified category.
+            </p>
+            <p>Other Device Includes: <span class="badge badge-danger">criminal mischief</span> <span class="badge badge-danger">graffiti vandalism</span> <span class="badge badge-danger">marijuana</span> </p> 
+        </div>
+        <br>
+        <div data-aos="fade-in">
+          <center>
+            <h3>Number of Crimes by NYC Borough for Crime Type Other</h3>
+            <img src="data:image/png;base64, {{ plot10|safe }}" id="image"/> 
+          </center> 
+        </div>
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Other is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ max10|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Other cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ maxpercent10|safe }} %</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                  <div class="py-5"></div>
+                      <h4 style="font-size: 20px;"><a href="">Total Number of Other Cases</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ count10|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box">
+                      <h4 style="font-size: 20px;"><a href="">Borough with Minimum Cases of Other is </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ min10|safe }}</a></h4>
+                      <hr>
+                      <h4 style="font-size: 20px;"><a href="">Percent of Other cases in this borough are</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ minpercent10|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Source of Other  -->
+        
+      </div>
+    </div>
+
+  </div>
+</section>
+
+  
+  
+    
+
+<div class="py-5"></div>
+<div class="py-5"></div>
+<div class="py-5"></div>
+ 
+   
+ 
+   <!-- Preloader -->
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+   <div id="preloader"></div>
+ 
+  
+   <!-- Vendor JS Files -->
+   <script src="/media/assets/vendor/aos/aos.js"></script>
+   <script src="/media/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="/media/assets/vendor/glightbox/js/glightbox.min.js"></script>
+   <script src="/media/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+   <script src="/media/assets/vendor/swiper/swiper-bundle.min.js"></script>
+   <script src="/media/assets/vendor/php-email-form/validate.js"></script>
+ 
+   <!-- Template Main JS File -->
+   <script src="/media/assets/js/main.js"></script>
+ 
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
+ </body>
+ 
+ </html>

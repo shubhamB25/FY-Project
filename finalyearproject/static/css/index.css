@@ -1,0 +1,9 @@
+.myChart{
+    width: 50%;
+}
+
+
+.myChartCanvas{
+    padding: 10px;
+    font-weight: 900;
+}

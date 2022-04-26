@@ -1,0 +1,409 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+<style>
+    
+    #heading {
+        text-align: center;
+    }
+    #plot {
+        align-self: center;
+    }
+   
+   
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js" integrity="sha256-Uv9BNBucvCPipKQ2NS9wYpJmi8DTOEfTA/nH2aoJALw=" crossorigin="anonymous"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.css" integrity="sha256-aa0xaJgmK/X74WM224KMQeNQC2xYKwlAt08oZqjeF0E=" crossorigin="anonymous" />
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+</head>
+<body> -->
+
+    <!DOCTYPE html>
+    <html lang="en" dir="ltr">
+    
+    <head>
+      <meta charset="utf-8">
+      
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+      <meta content="width=device-width, initial-scale=1.0" name="viewport">
+   
+     
+    
+      <!-- Favicons -->
+      <link href="/media/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+   
+    
+      <!-- Google Fonts -->
+      <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    
+      <!-- Vendor CSS Files -->
+      <link href="/media/assets/vendor/aos/aos.css" rel="stylesheet">
+      <!-- <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"> -->
+      <link href="/media/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+      <link href="/media/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+      <link href="/media/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+      <link href="/media/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+    
+      <!-- Template Main CSS File -->
+      <link href="/media/assets/css/style.css" rel="stylesheet">
+   
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+      <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"> -->
+     <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  -->
+      <!-- =======================================================
+      * Template Name: Day - v4.7.0
+      * Template URL: https://bootstrapmade.com/day-multipurpose-html-template-for-free/
+      * Author: BootstrapMade.com
+      * License: https://bootstrapmade.com/license/
+      ======================================================== -->
+    </head>
+    
+    <body>
+<div class="py-5"></div>
+<div class="container">
+    <div class="section-title" data-aos="fade-up">
+        <span>Clustering Based Location of Crime</span>
+        <h2>Clustering Based on Location of Crime</h2>
+        <hr style="background-color: red; width:550px"></hr>
+        <p style="font-size: 17px;">We have clustered the data using KMeans clustering algorithm and below is the graph that we obtained</p>
+      </div>
+
+    <h1></h1>
+    {% if mainplot %}
+    <div data-aos="fade-up">
+      <img src="data:image/png;base64, {{ mainplot|safe }}"/> 
+    </div>
+   
+    {% else %}
+  
+    {% endif %}
+</div>
+{%block content%}
+
+
+
+<div class="container">
+  <hr style="background-color: #e82d2d;"></hr>
+  <div class="section-title" data-aos="fade-up">    
+   
+    <h2>SELECT A REGION IN NY CITY TO VIEW ITS CRIME STATISTICS</h2>
+  </div>
+  <center>
+    <form action="{% url 'cluster' %}" method="post" enctype="multipart/form-data" class="form" data-aos="fade-up">
+      {% csrf_token %} 
+      <select name="clusteroption" id="clusteroption" style="max-width:90%; font-family: Raleway, sans-serif;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      padding: 10px 28px;
+      transition: 0.5s;
+      border: 2px solid #e82d2d;" >
+        <option id="type_one" value="one">Region 1</option>
+        <option id="type_two" value="two">Region 2</option>
+        <option id="type_three" value="three">Region 3</option>
+        <option id="type_four" value="four">Region 4</option>
+        <option id="type_five" value="five">Region 5</option>
+        <option id="type_six" value="six">Region 6</option>
+        <option id="type_seven" value="seven">Region 7</option>
+        <option id="type_eight" value="eight">Region 8</option>
+        <option id="type_nine" value="nine">Region 9</option>
+        <option id="type_ten" value="ten">Region 10</option>
+      </select>
+      <input type="submit"  style=" font-family: Raleway, sans-serif;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      padding: 10px 28px;
+      transition: 0.5s;
+      border: 2px solid #fff;
+      background-color: #e82d2d;
+      color: #fff;" class="submitbutton">
+  <form>
+  </center> 
+</div>
+
+  <script type="text/javascript"> 
+    document.getElementById('clusteroption').onchange = function() {
+        localStorage.setItem('selectedtem', document.getElementById('clusteroption').value);
+    };
+  
+    if (localStorage.getItem('selectedtem')) {
+        document.getElementById('type_'+localStorage.getItem('selectedtem')).selected = true;
+    } 
+  </script>
+  <br></br>
+ 
+  {% if clusterplot %}
+    <div class="container" style="border: 1px solid #e82d2d;padding: 20px 20px 20px 20px;" id="clusterbox" name="clusterbox" data-aos="fade-up">
+      <div class="section-title" data-aos="fade-up">    
+        <span>Region {{region|safe}}</span>    
+        <h2>Region {{region|safe}}</script></h2>
+      </div>
+        <div class=row>
+            <div class="col-sm-12" data-aos="zoom-in">
+                <img id="plot" src="data:image/png;base64, {{ clusterplot|safe }}"/>  
+            </div>
+        </div>
+
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 d-flex align-items-stretch;" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 20px;"><a href="">Number of Crimes in Region {{region|safe}}</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ total_crimes|safe }}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 20px;"><a href="">Percentage of total crimes in Region {{region|safe}} </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ total_crimes_percent|safe }} %</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- first row -->
+
+        <div class="section-title" data-aos="fade-up">    
+          <span>Top 3 Crimes in Region {{region|safe}}</span>    
+          <h2>Top 3 Crimes in Region {{region|safe}}</h2>
+          <hr style="background-color: red; width:550px"></hr>
+        </div>
+
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <!-- <h4 style="font-size: 20px;"><a href="">Borough with Maximum Cases of Harassment is </a></h4> -->
+                      <h4 style="font-size: 25px;"><a href="">{{first_crime|safe}}</a></h4>
+                      <p>Number of cases:</p>
+                      <h4 style="font-size: 25px;"><a href="">{{first_crime_no|safe}}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                  <h4 style="font-size: 25px;"><a href="">{{second_crime|safe}}</a></h4>
+                      <p>Number of cases:</p>
+                      <h4 style="font-size: 25px;"><a href="">{{second_crime_no|safe}}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                  <h4 style="font-size: 25px;"><a href="">{{third_crime|safe}}</a></h4>
+                  <p>Number of cases:</p>
+                  <h4 style="font-size: 25px;"><a href="">{{third_crime_no|safe}}</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Second row -->
+
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 25px;"><a href="">{{first_crime_percent|safe}} % </a></h4>
+                      <p>of the crimes are related to</p>
+                      <h4 style="font-size: 20px;"><a href="">{{first_crime|safe}}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                  <h4 style="font-size: 25px;"><a href="">{{second_crime_percent|safe}} % </a></h4>
+                      <p>of the crimes are related to</p>
+                      <h4 style="font-size: 20px;"><a href="">{{second_crime|safe}}</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                  <h4 style="font-size: 25px;"><a href="">{{third_crime_percent|safe}} % </a></h4>
+                  <p>of the crimes are related to</p>
+                  <h4 style="font-size: 20px;"><a href="">{{third_crime|safe}}</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- Third Row -->
+
+        <div class="section-title" data-aos="fade-up">    
+          <span>Distance covered by Region {{region|safe}}</span>    
+          <h2>Distance covered by Region {{region|safe}}</h2>
+          <hr style="background-color: red; width:550px"></hr>
+        </div>
+
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 20px;"><a href="">Horizontal </a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ horizontal_dist|safe }} KM</a></h4>
+                </div>
+              </div>
+              <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 20px;"><a href="">Vertical</a></h4>
+                      <h4 style="font-size: 25px;"><a href="">{{ vertical_dist|safe }} KM</a></h4>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- fourth row -->
+
+        <section id="services" class="services">
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-3 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+              </div>
+              <div class="col-lg-6 col-md-6 d-flex align-items-stretch" data-aos="fade-up">
+                <div class="icon-box" style="width:500px;">
+                      <h4 style="font-size: 25px;"><a href="">Area Address of the Centroid</a></h4>
+                      <p>{{ location_address|safe }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section><!-- fifth row -->   
+    </div>
+    {% else %}
+{% endif %}
+<br></br>
+
+<br></br>
+
+<div class="container">
+  <div class="row">
+      <div class="col-sm-6">
+          <div class="section-title" data-aos="fade-up">
+              
+              <h2>Region-wise distribution of number of cases</h2>
+              <hr style="background-color: red; width:550px"></hr>
+              <p style="font-size: 17px;">This chart shows how the number of cases are distributed among the regions.</p>
+            </div>
+          <canvas id="myChart1" width="200" height="205" data-aos="fade-up"></canvas>
+      </div>
+      <div class="col-sm-6">
+          <div class="section-title" data-aos="fade-up">
+              <div class="py-3"></div>
+              
+              <h2>Region-wise response time</h2>
+              <hr style="background-color: red; width:550px"></hr>
+              <p style="font-size: 17px;">This chart shows how much time the police authorities take to reach the crime location after a crime is reported.</p>
+            </div>
+          <canvas id="myChart2" width="200" height="200" data-aos="fade-up"></canvas>
+      </div>
+  </div>
+</div>
+{%endblock content%}
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
+{%block scripts%}
+
+<script> 
+// CHART 1
+var ctx1 = document.getElementById('myChart1').getContext('2d'); 
+
+var myChart1 = new Chart(ctx1, {
+           type: 'bar',
+           data: {labels: JSON.parse("{{chartlabels|escapejs}}"),         
+           datasets: [{
+           label: 'Number of Crimes',             
+           data: JSON.parse("{{chartdata|escapejs}}"),  
+           backgroundColor: [
+            'blue',
+            'green',
+            'red',
+            'cyan',
+            'magenta',
+            'purple',
+            'pink',
+            'orange',
+            'yellowgreen',
+            'brown'
+          ],
+          borderWidth: 1         
+           }]},
+           options: {
+      scales: {
+          y: {
+              beginAtZero: true
+          }
+      }
+  }
+          });
+
+          // CHART 2
+          var ctx2 = document.getElementById('myChart2').getContext('2d'); 
+
+          var myChart2 = new Chart(ctx2, {
+                      type: 'bar',
+                      data: {labels: JSON.parse("{{chartlabels|escapejs}}"),            
+                      datasets: [{
+                      label: 'Response Time (in minutes)',             
+                      data: JSON.parse("{{avg_time_diff|escapejs}}"),  
+                      backgroundColor: [
+                      'blue',
+                      'green',
+                      'red',
+                      'cyan',
+                      'magenta',
+                      'purple',
+                      'pink',
+                      'orange',
+                      'yellowgreen',
+                      'brown'
+                      ],
+                      borderWidth: 1         
+                      }]},
+                      options: {
+                  scales: {
+                      y: {
+                          beginAtZero: true
+                      }
+                  }
+              }
+                      });
+</script>
+{%endblock scripts%}
+
+<div class="py-5"></div>
+<div class="py-5"></div>
+<div class="py-5"></div>
+ 
+   
+ 
+   <!-- Preloader -->
+   <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+   <div id="preloader"></div>
+ 
+  
+   <!-- Vendor JS Files -->
+   <script src="/media/assets/vendor/aos/aos.js"></script>
+   <script src="/media/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+   <script src="/media/assets/vendor/glightbox/js/glightbox.min.js"></script>
+   <script src="/media/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+   <script src="/media/assets/vendor/swiper/swiper-bundle.min.js"></script>
+   <script src="/media/assets/vendor/php-email-form/validate.js"></script>
+ 
+   <!-- Template Main JS File -->
+   <script src="/media/assets/js/main.js"></script>
+ 
+   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.3/dist/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+ 
+ </body>
+ 
+ </html>
+
