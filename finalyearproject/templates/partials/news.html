@@ -150,10 +150,10 @@
         let chartDataset = {
             
             label: 'Crimes Recorded',
-            fill: {
-                target: 'origin',
-                above: 'rgba(255, 255, 0,0.4)',   // Area will be red above the origin
-            },
+            // fill: {
+            //     target: 'origin',
+            //     above: 'rgba(255, 255, 255,0.4)',   // Area will be red above the origin
+            // },
             data: [{% for value in values %} '{{value}}', {% endfor %}],
             // data: [{% for value in borough_count %} '{{value}}', {% endfor %}],
             // data = [{% for borough in borough_count %} "{{borough}}", {% endfor %}],
@@ -182,7 +182,7 @@
         // ********************************* Chart Config ********************************************
 
         let chartConfig = {
-            type: 'line',
+            type: 'bar',
             data: {
                 labels: [{% for date in dates %} "{{date}}",{% endfor %}],
                 // labels: [{% for name in borough_names %} "{{name}}",{% endfor %}],
@@ -216,7 +216,7 @@
             var newChartConfig = jQuery.extend(true, {}, chartConfig);
 
             if (newType == 'bar') {
-            newChartConfig.type = 'line'
+            newChartConfig.type = 'bar'
                 console.clear();
                 console.log("BAR CHART")
                 newChartConfig.data.labels= [{% for name in borough_names %} "{{name}}",{% endfor %}];
@@ -226,8 +226,9 @@
 
                 console.clear();
                 console.log("Line CHART")
-                newChartConfig.type = newType
-                chartDataset.data = dataset1
+                // newChartConfig.type = newType
+                newChartConfig.type = 'bar';
+                chartDataset.data = dataset1;
                 newChartConfig.datasets = [chartDataset]
             }
             console.log(newChartConfig.data.datasets)
