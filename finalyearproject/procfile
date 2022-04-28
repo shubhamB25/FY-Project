@@ -1,0 +1,1 @@
+web: gunicorn finalyearproject.wsgi --log-file -
