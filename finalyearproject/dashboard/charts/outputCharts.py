@@ -52,7 +52,8 @@ def get_time_series_data():
     datasets = load_feed_data()
     df = datasets[0]
     # filter by last 10 days
-    today = datetime.now().date()
+    # today = datetime.now().date()
+    today = datetime(2022,4,28).date()
     delta = timedelta(days=10)
     a = today - delta
     data = {}
